@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 6 Ajax CRUD tutorial using Datatable - ItSolutionStuff.com</title>
+    <title>Laravel 6 Ajax CRUD</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -15,8 +15,8 @@
 <body>
     
 <div class="container">
-    <h1>Laravel 6 Ajax CRUD tutorial using Datatable - ItSolutionStuff.com</h1>
-    <a class="btn btn-success" href="javascript:void(0)" id="createNewProduct"> Create New Product</a>
+    <h1>Laravel 6 Ajax CRUD</h1>
+    <a class="btn btn-success" href="javascript:void(0)" id="createNewProduct"> Creer nouveau</a>
     <table class="table table-bordered data-table">
         <thead>
             <tr>
@@ -91,7 +91,7 @@
         $('#saveBtn').val("create-product");
         $('#product_id').val('');
         $('#productForm').trigger("reset");
-        $('#modelHeading').html("Create New Product");
+        $('#modelHeading').html("Creer un nouveau");
         $('#ajaxModel').modal('show');
     });
     
@@ -109,7 +109,7 @@
     
     $('#saveBtn').click(function (e) {
         e.preventDefault();
-        $(this).html('Sending..');
+        $(this).html('En cours..');
     
         $.ajax({
           data: $('#productForm').serialize(),
@@ -133,7 +133,7 @@
     $('body').on('click', '.deleteProduct', function () {
      
         var product_id = $(this).data("id");
-        confirm("Are You sure want to delete !");
+        confirm("Vous êtes sur supprimer !");
       
         $.ajax({
             type: "DELETE",

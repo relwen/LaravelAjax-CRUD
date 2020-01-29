@@ -22,9 +22,9 @@ class ProductAjaxController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
    
-                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct">Edit</a>';
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct">Editer</a>';
    
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteProduct">Delete</a>';
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteProduct">Supprimer</a>';
     
                             return $btn;
                     })
@@ -46,7 +46,7 @@ class ProductAjaxController extends Controller
         Product::updateOrCreate(['id' => $request->product_id],
                 ['name' => $request->name, 'detail' => $request->detail]);        
    
-        return response()->json(['success'=>'Product saved successfully.']);
+        return response()->json(['success'=>'Ajouté avec succès.']);
     }
     /**
      * Show the form for editing the specified resource.
@@ -70,6 +70,6 @@ class ProductAjaxController extends Controller
     {
         Product::find($id)->delete();
      
-        return response()->json(['success'=>'Product deleted successfully.']);
+        return response()->json(['success'=>'Supprimer avec succès.']);
     }
 }
